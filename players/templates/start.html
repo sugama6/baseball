@@ -1,0 +1,16 @@
+{% load static %}
+{% load sass_tags %}
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>プロ野球選手名鑑</title>
+    <link rel="stylesheet" href="{% sass_src 'players/css/style.scss' %}">
+</head>
+<body class="start">
+<div class="bluelight">
+    <a class="baseball" href="{% url 'home' %}">プロ野球選手名鑑</a>
+</div>
+<p class="caption">NPB 2020</p>
+</body>
+</html>

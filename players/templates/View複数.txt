@@ -1,0 +1,190 @@
+insert into players_player (player_id, team_id, number, player_nm, player_kana, position, birthday, age, blood, height, weight, hit_throw, draft_year, draft_rank, join_year, career,award, video) values ('31','7','4','山野辺　翔','ヤマノベ　カケル','内野手','1994-5-24','25','AB','170','74','右右','2018','3','2019',' 桐蔭学園ー桜美林大ー三菱自動車岡崎','なし','null');
+insert into players_player (player_id, team_id, number, player_nm, player_kana, position, birthday, age, blood, height, weight, hit_throw, draft_year, draft_rank, join_year, career,award, video) values ('32','7','5','外崎　修汰','トノサキ　シュウタ','内野手','1992-12-20','27','O','177','82','右右','2014','3','2015','弘前実ー富士大','なし','null');
+insert into players_player (player_id, team_id, number, player_nm, player_kana, position, birthday, age, blood, height, weight, hit_throw, draft_year, draft_rank, join_year, career,award, video) values ('33','7','1','栗山　巧','クリヤマ　タクミ','外野手','1983-9-3','36','O','177','85','右左','2001','4','2002','育英','最多安打（２００８年）、ベストナイン（２００８年、２０１０年、２０１１年）ゴールデングラブ（２０１０年）','null');
+insert into players_player (player_id, team_id, number, player_nm, player_kana, position, birthday, age, blood, height, weight, hit_throw, draft_year, draft_rank, join_year, career,award, video) values ('34','7','7','金子　侑司','カネコ　ユウジ','外野手','1990-4-24','30','B','179','76','右両','2012','3','2013','立命館宇治ー立命大','盗塁王（２０１６年、２０１９年）','null');
+
+
+team.html
+
+{% extends 'layout.html' %}
+{% load static %}
+{% load sass_tags %}
+
+{% block customcss %}
+{% endblock customcss %}
+
+{% block content %}
+<h2>選手一覧</h2>
+<div class="content">
+    <div class="team_img">
+        {% if object.team_id == 1 %}
+        <img src="{% static 'players/img/logo_g_m.gif' %}" alt='ジャイアンツ' width='150'>
+        <h3 class="giants">{{ object.team_nm }}</h3>
+        {% elif object.team_id == 2 %}
+        <img src="{% static 'players/img/logo_db_m.gif' %}" alt='ベイスターズ' width='150'>
+        <h3 class="baystars">{{ object.team_nm }}</h3>
+        {% elif object.team_id == 3 %}
+        <img src="{% static 'players/img/logo_t_m.gif' %}" alt='タイガース' width='150'>
+        <h3 class="tigers">{{ object.team_nm }}</h3>
+        {% elif object.team_id == 4 %}
+        <img src="{% static 'players/img/logo_c_m.gif' %}" alt='カープ' width='150'>
+        <h3 class="carp">{{ object.team_nm }}</h3>
+        {% elif object.team_id == 5 %}
+        <img src="{% static 'players/img/logo_d_m.gif' %}" alt='ドラゴンズ' width='150'>
+        <h3 class="dragons">{{ object.team_nm }}</h3>
+        {% elif object.team_id == 6 %}
+        <img src="{% static 'players/img/logo_s_m.gif' %}" alt='スワローズ' width='150'>
+        <h3 class="swallows">{{ object.team_nm }}</h3>
+        {% elif object.team_id == 7 %}
+        <img src="{% static 'players/img/logo_l_m.gif' %}" alt='ライオンズ' width='150'>
+        <h3 class="lions">{{ object.team_nm }}</h3>
+        {% elif object.team_id == 8 %}
+        <img src="{% static 'players/img/logo_h_m.gif' %}" alt='ホークス' width='150'>
+        <h3 class="hawks">{{ object.team_nm }}</h3>
+        {% elif object.team_id == 9 %}
+        <img src="{% static 'players/img/logo_e_m.gif' %}" alt='イーグルス' width='150'>
+        <h3 class="eagles">{{ object.team_nm }}</h3>
+        {% elif object.team_id == 10 %}
+        <img src="{% static 'players/img/logo_m_m.gif' %}" alt='マリーンズ' width='150'>
+        <h3 class="marines">{{ object.team_nm }}</h3>
+        {% elif object.team_id == 11 %}
+        <img src="{% static 'players/img/logo_f_m.gif' %}" alt='ファイターズ' width='150'>
+        <h3 class="fighters">{{ object.team_nm }}</h3>
+        {% elif object.team_id == 12 %}
+        <img src="{% static 'players/img/logo_b_m.gif' %}" alt='バファローズ' width='150'>
+        <h3 class="buffaloes">{{ object.team_nm }}</h3>
+        {% endif %}
+    </div>
+    
+        <ul class="team_info"> 
+            <li>{{ object.stadium }}</li>
+            <li>{{ object.address }}</li>
+            <li><a href="{{ object.address_url }}">Googleマップへ</a></li>
+        </ul>
+       
+        
+    <div class="team_player_img">
+        <p class="position">投手</p>
+        {% for item in more_context %}
+            {% if　item.position == '投手' %}
+                {% if item.pk == 1 %}
+                <div class="player_img"><img src="{% static 'players/img/tatuya_imai.jpg' %}" width=200>
+                    <p>{{ item.number }}</p>
+                    <a href="{% url 'profile' item.pk %}" class="btn">{{ item.player_nm }}<br>{{ item.player_kana }}</a>
+                </div>
+                {% elif item.pk == 5 %}  
+                <div class="player_img"><img src="{% static 'players/img/yutarou_watanabe.jpg' %}" width=200>
+                  <p>{{ item.number }}</p>
+                    <a href="{% url 'profile' item.pk %}" class="btn">{{ item.player_nm }}<br>{{ item.player_kana }}</a>
+                </div>
+                {% elif item.pk == 6 %}
+                <div class="player_img"><img src="{% static 'players/img/kouna_takahasi.jpg' %}" width=200>                  <p>{{ item.number }}</p>
+                    <a href="{% url 'profile' item.pk %}" class="btn">{{ item.player_nm }}<br>{{ item.player_kana }}</a>
+                </div>
+                {% elif item.pk == 7 %}
+                <div class="player_img"><img src="{% static 'players/img/tatsushi_masuda.jpg' %}" width=200>                  <p>{{ item.number }}</p>
+                    <a href="{% url 'profile' item.pk %}" class="btn">{{ item.player_nm }}<br>{{ item.player_kana }}</a>
+                </div>
+                {% elif item.pk == 8 %}
+                <div class="player_img"><img src="{% static 'players/img/tetsu_miyagawa.jpg' %}" width=200>                  <p>{{ item.number }}</p>
+                    <a href="{% url 'profile' item.pk %}" class="btn">{{ item.player_nm }}<br>{{ item.player_kana }}</a>
+                </div>
+                {% elif item.pk == 9 %}
+                <div class="player_img"><img src="{% static 'players/img/daisuke_matsuzaka.jpg' %}" width=200>                  <p>{{ item.number }}</p>
+                    <a href="{% url 'profile' item.pk %}" class="btn">{{ item.player_nm }}<br>{{ item.player_kana }}</a>
+                </div>
+                {% elif item.pk == 10 %}
+                <div class="player_img"><img src="{% static 'players/img/wataru_matsumoto.jpg' %}" width=200>                  <p>{{ item.number }}</p>
+                    <a href="{% url 'profile' item.pk %}" class="btn">{{ item.player_nm }}<br>{{ item.player_kana }}</a>
+                </div>
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+    
+                
+        <p class="position">捕手</p>
+        
+        {% for item in more_context %}        
+            {% if item.position == '捕手' %}
+                {% if item.pk == 2 %}
+                <div class="player_img"><img src="{% static 'players/img/masatosi_okada.jpg' %}" width=200>                  <p>{{ item.number }}</p>
+                    <a href="{% url 'profile' item.pk %}" class="btn">{{ item.player_nm }}<br>{{ item.player_kana }}</a>
+                </div>
+                {% elif item.pk == 26 %}
+                <div class="player_img"><img src="{% static 'players/img/tomoya_mori.jpg' %}" width=200>                  <p>{{ item.number }}</p>
+                    <a href="{% url 'profile' item.pk %}" class="btn">{{ item.player_nm }}<br>{{ item.player_kana }}</a>
+                </div>
+                {% elif item.pk == 27 %}
+                <div class="player_img"><img src="{% static 'players/img/sena_tuge.jpg' %}" width=200>                  <p>{{ item.number }}</p>
+                    <a href="{% url 'profile' item.pk %}" class="btn">{{ item.player_nm }}<br>{{ item.player_kana }}</a>
+                </div>
+                {% elif item.pk == 28 %}
+                <div class="player_img"><img src="{% static 'players/img/syouya_makino.jpg' %}" width=200>                  <p>{{ item.number }}</p>
+                    <a href="{% url 'profile' item.pk %}" class="btn">{{ item.player_nm }}<br>{{ item.player_kana }}</a>
+                </div>
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+        
+
+        <p class="position">内野手</p>
+        
+        {% for item in more_context %}        
+            {% if item.position == '内野手' %}
+                {% if item.pk == 29 %}
+                <div class="player_img"><img src="{% static 'players/img/daiti_mizugiti.jpg' %}" width=200>                  <p>{{ item.number }}</p>
+                    <a href="{% url 'profile' item.pk %}" class="btn">{{ item.player_nm }}<br>{{ item.player_kana }}</a>
+                </div>
+                {% elif item.pk == 30 %}
+                <div class="player_img"><img src="{% static 'players/img/hotaka_yamakawa.jpg' %}" width=200>                  <p>{{ item.number }}</p>
+                    <a href="{% url 'profile' item.pk %}" class="btn">{{ item.player_nm }}<br>{{ item.player_kana }}</a>
+                </div>
+                {% elif item.pk == 31 %}
+                <div class="player_img"><img src="{% static 'players/img/kakeru_yamanobe.jpg' %}" width=200>                  <p>{{ item.number }}</p>
+                    <a href="{% url 'profile' item.pk %}" class="btn">{{ item.player_nm }}<br>{{ item.player_kana }}</a>
+                </div>
+                {% elif item.pk == 32 %}
+                <div class="player_img"><img src="{% static 'players/img/syuuta_tonosaki.jpg' %}" width=200>                  <p>{{ item.number }}</p>
+                    <a href="{% url 'profile' item.pk %}" class="btn">{{ item.player_nm }}<br>{{ item.player_kana }}</a>
+                </div>
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+        
+
+        <p class="position">外野手</p>
+     
+        {% for item in more_context %}        
+            {% if item.position == '外野手' %}
+                {% if item.pk == 33 %}
+                <div class="player_img"><img src="{% static 'players/img/takumi_kuriyama.jpg' %}" width=200>                  <p>{{ item.number }}</p>
+                    <a href="{% url 'profile' item.pk %}" class="btn">{{ item.player_nm }}<br>{{ item.player_kana }}</a>
+                </div>
+                {% elif item.pk == 34 %}
+                <div class="player_img"><img src="{% static 'players/img/yuuji_kaneko.jpg' %}" width=200>                  <p>{{ item.number }}</p>
+                    <a href="{% url 'profile' item.pk %}" class="btn">{{ item.player_nm }}<br>{{ item.player_kana }}</a>
+                </div>
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+            </div>
+     
+            
+            {% if object.team_id == 9 %}
+                {% if item.pk == 3 %}
+                <div class="player_img"><img src="{% static 'players/img/yuuki_matsui.jpg' %}" width=200>                  <p>{{ item.number }}</p>
+                    <a href="{% url 'profile' item.pk %}" class="btn">{{ item.player_nm }}<br>{{ item.player_kana }}</a>
+                </div>
+                {% elif item.pk == 4 %}
+                <div class="player_img"><img src="{% static 'players/img/takayuki_kishi.jpg' %}" width=200>                  <p>{{ item.number }}</p>
+                    <a href="{% url 'profile' item.pk %}" class="btn">{{ item.player_nm }}<br>{{ item.player_kana }}</a>
+                </div>
+                {% endif %}
+            {% endif %}
+    
+        
+    </table>
+</div>
+{% endblock content %}
+
+

@@ -1,0 +1,65 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% load sass_tags %}
+
+{% block customcss %}
+
+<link rel="stylesheet" href="{% sass_src 'players/css/style.scss' %}">
+{% endblock customcss %}
+
+{% block content %}
+<h2>プロフィール</h2>
+    
+    <img class="profile_img" src="/players/static/players/img/{{ object.img }}" width="200">
+    
+    <div class="player_info">
+    <p class="number">{{ object.number }}</p>
+    <p class="player_nm">{{ object.player_nm }}</p>
+    <p class="player_kana">{{ object.player_kana }}</p>
+    </div>
+<div class="content">
+<table class="profile">
+    <tr>
+        <th>ポジション</th>
+        <td>{{ object.position }}</td>
+    </tr>
+    <tr>
+        <th>生年月日</th>
+        <td>{{ object.birthday|date:"Y/n/j" }}</td>
+    </tr>
+    <tr>
+        <th>年齢</th>
+        <td>{{ object.age }}歳</td>
+    </tr>
+    <tr>
+        <th>血液型</th>
+        <td>{{ object.blood }}型</td>
+    </tr>
+    <tr>
+        <th>身長/体重</th>
+        <td>{{ object.height }}cm/{{ object.weight }}kg</td>
+    </tr>
+    <tr>
+        <th>投打</th>
+        <td>{{ object.hit_throw }}</td>
+    </tr>
+    <tr>
+        <th>ドラフト</th>
+        <td>{{ object.draft_year }}年{{ object.draft_rank }}位</td>
+    </tr>
+    <tr>
+        <th>入団</th>
+        <td>{{ object.join_year }}年</td>
+    </tr>
+    <tr>
+        <th>経歴</th>
+        <td>{{ object.career }}</td>
+    </tr>
+    <tr>
+        <th>タイトル</th>
+        <td>{{ object.award }}</td>
+    </tr>
+</table>
+<iframe width="560" height="315" src="{{ object.video }}"frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+{% endblock content %}

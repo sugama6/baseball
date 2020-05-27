@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% load sass_tags %}
+
+{% block customcss %}
+<link rel="stylesheet" href="{% sass_src 'players/css/style.scss' %}">
+{% endblock customcss %}
+
+{% block content %}
+<h2>検索結果</h2>
+<div class="content">
+                
+    <table class="find">
+      <p>{{ message|safe }}</p>
+        <form action="{% url 'find' %}" method="post">
+        {% csrf_token %}
+        {{ form.choice }}{{ form.find }}
+        <input type="submit" value="選択">
+        </form>
+        <tr>
+            <th>名前</th>
+            
+        </tr>
+        <tr>
+        {% for player in data %}
+            <td><a href="{% url 'profile' player.pk %}" class="btn">{{ player.player_nm }}({{ player.player_kana }})</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock content %}
