@@ -17,50 +17,52 @@
 <body>
     <div class="team_hp">
     <ul>
-        <li><img src="{% static 'players/img/flag_central_s.gif' %}" alt='セ・リーグ' width='59' height='38' /></a></li>
-        <li><a href = 'https://www.giants.jp/top.html'><img src="{% static 'players/img/logo_g_m.gif' %}" alt='ジャイアンツ' width='50' height='50' /></a></li>
-        <li><a href = 'https://www.baystars.co.jp/'><img src="{% static 'players/img/logo_db_m.gif' %}" alt='ベイスターズ' width='50' height='50' /></a></li>
-        <li><a href = 'https://hanshintigers.jp/'><img src="{% static 'players/img/logo_t_m.gif' %}" alt='タイガース' width='50' height='50' /></a></li>
-        <li><a href = 'https://www.carp.co.jp/'><img src="{% static 'players/img/logo_c_m.gif' %}" alt='カープ' width='50' height='50' /></a></li>
-        <li><a href = 'http://dragons.jp/'><img src="{% static 'players/img/logo_d_m.gif' %}" alt='ドラゴンズ' width='50' height='50' /></a></li>
-        <li><a href = 'https://www.yakult-swallows.co.jp/'><img src="{% static 'players/img/logo_s_m.gif' %}" alt='スワローズ' width='50' height='50' /></a></li>
-        <li><img src="{% static 'players/img/flag_pacific_s.gif' %}" alt='パ・リーグ' width='59' height='38' /></a></li>
-        <li><a href = 'http://www.seibulions.jp/'><img src="{% static 'players/img/logo_l_m.gif' %}" alt='ライオンズ' width='50' height='50' /></a></li>
-        <li><a href = 'https://www.softbankhawks.co.jp/'><img src="{% static 'players/img/logo_h_m.gif' %}" alt='ホークス' width='50' height='50' /></a></li>
-        <li><a href = 'https://www.rakuteneagles.jp/'><img src="{% static 'players/img/logo_e_m.gif' %}" alt='イーグルス' width='50' height='50' /></a></li>
-        <li><a href = 'https://www.marines.co.jp/'><img src="{% static 'players/img/logo_m_m.gif' %}" alt='マリーンズ' width='50' height='50' /></a></li>
-        <li><a href = 'http://www.fighters.co.jp/'><img src="{% static 'players/img/logo_f_m.gif' %}" alt='ファイターズ' width='50' height='50' /></a></li>
-        <li><a href = 'https://www.buffaloes.co.jp/'><img src="{% static 'players/img/logo_b_m.gif' %}" alt='バファローズ' width='50' height='50'/></a></li>
+        <li><img src="{% static 'players/img/flag_central_s.gif' %}" alt='セ・リーグ' width='100%' height='100%' /></a></li>
+        <li><a href = 'https://www.giants.jp/top.html'><img src="{% static 'players/img/logo1.gif' %}" alt='ジャイアンツ' width='100%' height='100%' /></a></li>
+        <li><a href = 'https://www.baystars.co.jp/'><img src="{% static 'players/img/logo2.gif' %}" alt='ベイスターズ' width='100%' height='100%' /></a></li>
+        <li><a href = 'https://hanshintigers.jp/'><img src="{% static 'players/img/logo3.gif' %}" alt='タイガース' width='100%' height='100%' /></a></li>
+        <li><a href = 'https://www.carp.co.jp/'><img src="{% static 'players/img/logo4.gif' %}" alt='カープ' width='100%' height='100%' /></a></li>
+        <li><a href = 'http://dragons.jp/'><img src="{% static 'players/img/logo5.gif' %}" alt='ドラゴンズ' width='100%' height='100%' /></a></li>
+        <li><a href = 'https://www.yakult-swallows.co.jp/'><img src="{% static 'players/img/logo6.gif' %}" alt='スワローズ' width='100%' height='100%' /></a></li>
+        <li><img src="{% static 'players/img/flag_pacific_s.gif' %}" alt='パ・リーグ' width='100%' height='100%' /></a></li>
+        <li><a href = 'http://www.seibulions.jp/'><img src="{% static 'players/img/logo7.gif' %}" alt='ライオンズ' width='100%' height='100%' /></a></li>
+        <li><a href = 'https://www.softbankhawks.co.jp/'><img src="{% static 'players/img/logo8.gif' %}" alt='ホークス' width='100%' height='100%' /></a></li>
+        <li><a href = 'https://www.rakuteneagles.jp/'><img src="{% static 'players/img/logo9.gif' %}" alt='イーグルス' width='100%' height='100%' /></a></li>
+        <li><a href = 'https://www.marines.co.jp/'><img src="{% static 'players/img/logo10.gif' %}" alt='マリーンズ' width='100%' height='100%' /></a></li>
+        <li><a href = 'http://www.fighters.co.jp/'><img src="{% static 'players/img/logo11.gif' %}" alt='ファイターズ' width='100%' height='100%' /></a></li>
+        <li><a href = 'https://www.buffaloes.co.jp/'><img src="{% static 'players/img/logo12.gif' %}" alt='バファローズ' width='100%' height='100%'/></a></li>
     </ul>
     </div>
     <div class="form">
-        <table>
-                <p class="player_search">選手の検索</p>
-                <form action="{% url 'find' %}" method="post">
+       
+        <h1 class="title">プロ野球選手名鑑</h1>
+            <div class="find_form">
+                <form class="action" action="{% url 'find' %}" method="post">
                 {% csrf_token %}
                 {{ form.choice }}{{ form.find }}<input type="submit" value="検索">
                 </form>
-        </table>
+            </div>
+        
     </div>
     {% block content %}
     
     {% endblock content %}
       <div class="team_hp">
         <ul>
-            <li><img src="{% static 'players/img/flag_central_s.gif' %}" alt='セ・リーグ' width='59' height='38' /></a></li>
-            <li><a href = 'https://www.giants.jp/top.html'><img src="{% static 'players/img/logo_g_m.gif' %}" alt='ジャイアンツ' width='50' height='50' /></a></li>
-            <li><a href = 'https://www.baystars.co.jp/'><img src="{% static 'players/img/logo_db_m.gif' %}" alt='ベイスターズ' width='50' height='50' /></a></li>
-            <li><a href = 'https://hanshintigers.jp/'><img src="{% static 'players/img/logo_t_m.gif' %}" alt='タイガース' width='50' height='50' /></a></li>
-            <li><a href = 'https://www.carp.co.jp/'><img src="{% static 'players/img/logo_c_m.gif' %}" alt='カープ' width='50' height='50' /></a></li>
-            <li><a href = 'http://dragons.jp/'><img src="{% static 'players/img/logo_d_m.gif' %}" alt='ドラゴンズ' width='50' height='50' /></a></li>
-            <li><a href = 'https://www.yakult-swallows.co.jp/'><img src="{% static 'players/img/logo_s_m.gif' %}" alt='スワローズ' width='50' height='50' /></a></li>
-            <li><img src="{% static 'players/img/flag_pacific_s.gif' %}" alt='パ・リーグ' width='59' height='38' /></a></li>
-            <li><a href = 'http://www.seibulions.jp/'><img src="{% static 'players/img/logo_l_m.gif' %}" alt='ライオンズ' width='50' height='50' /></a></li>
-            <li><a href = 'https://www.softbankhawks.co.jp/'><img src="{% static 'players/img/logo_h_m.gif' %}" alt='ホークス' width='50' height='50' /></a></li>
-            <li><a href = 'https://www.rakuteneagles.jp/'><img src="{% static 'players/img/logo_e_m.gif' %}" alt='イーグルス' width='50' height='50' /></a></li>
-            <li><a href = 'https://www.marines.co.jp/'><img src="{% static 'players/img/logo_m_m.gif' %}" alt='マリーンズ' width='50' height='50' /></a></li>
-            <li><a href = 'http://www.fighters.co.jp/'><img src="{% static 'players/img/logo_f_m.gif' %}" alt='ファイターズ' width='50' height='50' /></a></li>
-            <li><a href = 'https://www.buffaloes.co.jp/'><img src="{% static 'players/img/logo_b_m.gif' %}" alt='バファローズ' width='50' height='50'/></a></li>
+            <li><img src="{% static 'players/img/flag_central_s.gif' %}" alt='セ・リーグ' width='100%' height='100%' /></a></li>
+            <li><a href = 'https://www.giants.jp/top.html'><img src="{% static 'players/img/logo1.gif' %}" alt='ジャイアンツ' width='100%' height='100%' /></a></li>
+            <li><a href = 'https://www.baystars.co.jp/'><img src="{% static 'players/img/logo2.gif' %}" alt='ベイスターズ' width='100%' height='100%' /></a></li>
+            <li><a href = 'https://hanshintigers.jp/'><img src="{% static 'players/img/logo3.gif' %}" alt='タイガース' width='100%' height='100%' /></a></li>
+            <li><a href = 'https://www.carp.co.jp/'><img src="{% static 'players/img/logo4.gif' %}" alt='カープ' width='100%' height='100%' /></a></li>
+            <li><a href = 'http://dragons.jp/'><img src="{% static 'players/img/logo5.gif' %}" alt='ドラゴンズ' width='100%' height='100%' /></a></li>
+            <li><a href = 'https://www.yakult-swallows.co.jp/'><img src="{% static 'players/img/logo6.gif' %}" alt='スワローズ' width='100%' height='100%' /></a></li>
+            <li><img src="{% static 'players/img/flag_pacific_s.gif' %}" alt='パ・リーグ' width='100%' height='100%' /></a></li>
+            <li><a href = 'http://www.seibulions.jp/'><img src="{% static 'players/img/logo7.gif' %}" alt='ライオンズ' width='100%' height='100%' /></a></li>
+            <li><a href = 'https://www.softbankhawks.co.jp/'><img src="{% static 'players/img/logo8.gif' %}" alt='ホークス' width='100%' height='100%' /></a></li>
+            <li><a href = 'https://www.rakuteneagles.jp/'><img src="{% static 'players/img/logo9.gif' %}" alt='イーグルス' width='100%' height='100%' /></a></li>
+            <li><a href = 'https://www.marines.co.jp/'><img src="{% static 'players/img/logo10.gif' %}" alt='マリーンズ' width='100%' height='100%' /></a></li>
+            <li><a href = 'http://www.fighters.co.jp/'><img src="{% static 'players/img/logo11.gif' %}" alt='ファイターズ' width='100%' height='100%' /></a></li>
+            <li><a href = 'https://www.buffaloes.co.jp/'><img src="{% static 'players/img/logo12.gif' %}" alt='バファローズ' width='100%' height='100%'/></a></li>
         </ul>
       </div>
 <footer>Copyright 2020 Yusuek Sugama.</footer>

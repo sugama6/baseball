@@ -70,12 +70,6 @@ class TeamDetail(DetailView, generic.edit.FormMixin):
         return Team.objects.order_by('pk')
 
 #profile.html 画面
-#def profile_list(request, pk):
-#    object = Player.objects.get(pk=pk)
-#    print(object)
-#    return render(request, 'profile.html', {'object':object})
-
-#profile.html 画面
 def profile_list(request, pk):
     print("-- profile_list(request, pk): --")
     object = Player.objects.get(pk=pk)

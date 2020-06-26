@@ -7,17 +7,14 @@
 
 {% block content %}
     <!-- p><a href="{% url 'find' %}">選手の検索へ</a></!-->
-<div class="title">
-    <img src="{% static 'players/img/img-player.png' %}" alt='NPB' width='1400' height='300'/>
-        <h1>プロ野球選手名鑑</h1>
-</div>
+    
     <h2>HOME</h2>
     <div class="content">
         <div class="container_team">
                 <div class="row">
                     <div class="col">
                         {% with item=object_list.0 %}
-                            <a href = "{% url 'detail' item.pk %}"><img src="/players/static/players/img/{{ item.img }}"　width=100></a>
+                            <a href = "{% url 'detail' item.pk %}"><img src="/players/static/players/img/{{ item.img }}" width=100px></a>
                             <a href = "{% url 'detail' item.pk %}"><h3 class="giants">{{ item.team_nm }}</h3></a>
                             <ul>
                                 <li>リーグ優勝回数 :{{ item.league_v }}</li>
@@ -28,7 +25,7 @@
                     </div>
                     <div class="col">
                         {% with item=object_list.6 %}
-                            <a href = "{% url 'detail' item.pk %}"><img src="/players/static/players/img/{{ item.img }}" width=100></a>
+                            <a href = "{% url 'detail' item.pk %}"><img src="/players/static/players/img/{{ item.img }}" width=100px></a>
                             <a href = "{% url 'detail' item.pk %}"><h3 class="lions">{{ item.team_nm }}</h3></a>                            
                             <ul>
                                 <li>リーグ優勝回数 :{{ item.league_v }}</li>
@@ -41,7 +38,7 @@
                 <div class="row">
                     <div class="col">
                         {% with item=object_list.1 %}
-                            <a href = "{% url 'detail' item.pk %}"><img src="/players/static/players/img/{{ item.img }}" width=100></a>
+                            <a href = "{% url 'detail' item.pk %}"><img src="/players/static/players/img/{{ item.img }}" width=100px></a>
                             <a href = "{% url 'detail' item.pk %}"><h3 class="baystars">{{ item.team_nm }}</h3></a>                           
                             <ul>
                                 <li>リーグ優勝回数 :{{ item.league_v }}</li>
@@ -52,7 +49,7 @@
                     </div>
                     <div class="col">
                         {% with item=object_list.7 %}
-                            <a href = "{% url 'detail' item.pk %}"><img src="/players/static/players/img/{{ item.img }}" width=100></a>
+                            <a href = "{% url 'detail' item.pk %}"><img src="/players/static/players/img/{{ item.img }}" width=100px></a>
                             <a href = "{% url 'detail' item.pk %}"><h3 class="hawks">{{ item.team_nm }}</h3></a>                      
                             <ul>
                                 <li>リーグ優勝回数 :{{ item.league_v }}</li>
@@ -65,7 +62,7 @@
                 <div class="row">
                     <div class="col">
                         {% with item=object_list.2 %}
-                            <a href = "{% url 'detail' item.pk %}"><img src="/players/static/players/img/{{ item.img }}" width=100></a>
+                            <a href = "{% url 'detail' item.pk %}"><img src="/players/static/players/img/{{ item.img }}" width=100px></a>
                             <a href = "{% url 'detail' item.pk %}"><h3 class="tigers">{{ item.team_nm }}</h3></a>
                             <ul>
                                 <li>リーグ優勝回数 :{{ item.league_v }}</li>
@@ -76,7 +73,7 @@
                     </div>
                     <div class="col">
                         {% with item=object_list.8 %}
-                            <a href = "{% url 'detail' item.pk %}"><img src="/players/static/players/img/{{ item.img }}" width=100></a>
+                            <a href = "{% url 'detail' item.pk %}"><img src="/players/static/players/img/{{ item.img }}" width=100px></a>
                             <a href = "{% url 'detail' item.pk %}"><h3 class="eagles">{{ item.team_nm }}</h3></a>
                             <ul>
                                 <li>リーグ優勝回数 :{{ item.league_v }}</li>
@@ -89,7 +86,7 @@
                 <div class="row">
                     <div class="col">
                         {% with item=object_list.3 %}
-                            <a href = "{% url 'detail' item.pk %}"><img src="/players/static/players/img/{{ item.img }}" width=100></a>
+                            <a href = "{% url 'detail' item.pk %}"><img src="/players/static/players/img/{{ item.img }}" width=100px></a>
                             <a href = "{% url 'detail' item.pk %}"><h3 class="carp">{{ item.team_nm }}</h3></a>
                             <ul>
                                 <li>リーグ優勝回数 :{{ item.league_v }}</li>
@@ -100,7 +97,7 @@
                     </div>
                     <div class="col">
                         {% with item=object_list.9 %}
-                            <a href = "{% url 'detail' item.pk %}"><img src="/players/static/players/img/{{ item.img }}" width=100></a>
+                            <a href = "{% url 'detail' item.pk %}"><img src="/players/static/players/img/{{ item.img }}" width=100px></a>
                             <a href = "{% url 'detail' item.pk %}"><h3 class="marines">{{ item.team_nm }}</h3></a>
                             <ul>
                                 <li>リーグ優勝回数 :{{ item.league_v }}</li>
@@ -113,7 +110,7 @@
                 <div class="row">
                     <div class="col">
                         {% with item=object_list.4 %}
-                            <a href = "{% url 'detail' item.pk %}"><img src="/players/static/players/img/{{ item.img }}" width=100></a>
+                            <a href = "{% url 'detail' item.pk %}"><img src="/players/static/players/img/{{ item.img }}" width=100px></a>
                             <a href = "{% url 'detail' item.pk %}"><h3 class="dragons">{{ item.team_nm }}</h3></a>
                             <ul>
                                 <li>リーグ優勝回数 :{{ item.league_v }}</li>
@@ -124,7 +121,7 @@
                     </div>
                     <div class="col">
                         {% with item=object_list.10 %}
-                            <a href = "{% url 'detail' item.pk %}"><img src="/players/static/players/img/{{ item.img }}" width=100></a>
+                            <a href = "{% url 'detail' item.pk %}"><img src="/players/static/players/img/{{ item.img }}" width=100px></a>
                             <a href = "{% url 'detail' item.pk %}"><h3 class="fighters">{{ item.team_nm }}</h3></a>
                             <ul>
                                 <li>リーグ優勝回数 :{{ item.league_v }}</li>
@@ -137,7 +134,7 @@
                 <div class="row">
                     <div class="col">
                         {% with item=object_list.5 %}
-                            <a href = "{% url 'detail' item.pk %}"><img src="/players/static/players/img/{{ item.img }}" width=100></a>
+                            <a href = "{% url 'detail' item.pk %}"><img src="/players/static/players/img/{{ item.img }}" width=100px></a>
                             <a href = "{% url 'detail' item.pk %}"><h3 class="swallows">{{ item.team_nm }}</h3></a>
                             <ul>
                                 <li>リーグ優勝回数 :{{ item.league_v }}</li>
@@ -148,7 +145,7 @@
                     </div>
                     <div class="col">
                         {% with item=object_list.11 %}
-                            <a href = "{% url 'detail' item.pk %}"><img src="/players/static/players/img/{{ item.img }}" width=100></a>
+                            <a href = "{% url 'detail' item.pk %}"><img src="/players/static/players/img/{{ item.img }}" width=100px></a>
                             <a href = "{% url 'detail' item.pk %}"><h3 class="buffaloes">{{ item.team_nm }}</h3></a>
                             <ul>
                                 <li>リーグ優勝回数 :{{ item.league_v }}</li>
